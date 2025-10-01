@@ -19,8 +19,7 @@ Compares two turning styles with identical speed/timing:
 
 ## Filming notes
 - Keep camera framing, lighting, and surface identical.
-- Use the same audible cue (“Three, two, one, go.”).
-- PRE=1.0s, TURN_T=1.5s, AFTER=2.0s identical across A/B.
+- PRE=0.5s, TURN_T=1s, AFTER=0.5s identical across A/B.
 
 ## Survey items (copy into Qualtrics)
 Q1: I would trust this robot to navigate safely around me. (1–7)
