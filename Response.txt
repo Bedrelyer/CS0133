@@ -1,0 +1,48 @@
+Six response sets (Video A = sharp 90°, Video B = smooth 90°)
+Participant 1
+
+Video A (sharp) — Q1: 3
+Q2: The snap turn felt jerky and a bit unpredictable. I’d worry about it clipping a corner near my feet.
+
+Video B (smooth) — Q1: 6
+Q2: The gradual arc looked controlled and easier to anticipate. It seemed like it would steer around people more safely.
+
+Participant 2
+
+Video A (sharp) — Q1: 4
+Q2: It was quick and efficient, but the sudden heading change made me tense. The speed was fine; the turn itself felt abrupt.
+
+Video B (smooth) — Q1: 6
+Q2: The curve gave me time to read its intent. Smooth motion = more predictable path.
+
+Participant 3
+
+Video A (sharp) — Q1: 2
+Q2: Looked like it “snapped” without warning. If I were nearby, I’d step back.
+
+Video B (smooth) — Q1: 7
+Q2: Very clear where it was going the whole time. No surprises, so I’d trust it more.
+
+Participant 4
+
+Video A (sharp) — Q1: 5
+Q2: I actually liked the decisiveness. Still, it pivoted fast enough that I’d want some buffer space.
+
+Video B (smooth) — Q1: 5
+Q2: Smoother, but also slower to complete the corner. Feels safe, but not dramatically safer than A to me.
+
+Participant 5
+
+Video A (sharp) — Q1: 3
+Q2: The corner looked “snappy” and slightly wobbly after the turn. That made it feel less stable.
+
+Video B (smooth) — Q1: 6
+Q2: The bot held a steady arc with no wobble. Seemed like better traction and control.
+
+Participant 6
+
+Video A (sharp) — Q1: 4
+Q2: Fine in open space, but near people I’d prefer gentler turns. The abrupt heading change is hard to anticipate.
+
+Video B (smooth) — Q1: 7
+Q2: Clear intent and consistent speed through the turn. I could easily predict its path and keep out of the way.
