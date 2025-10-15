@@ -1,0 +1,175 @@
+// Curious Guide + Voice Ear + Hit Reactions — Sphero Edu JavaScript
+
+// ===== Tunables =====
+const SPEED        = 90;
+const TURN_WAIT_S  = 10;
+const PAUSE        = 0.25;
+const ARM_LENGTH   = 1.0;
+const LISTEN_S     = 3.0;
+const SHAKE_REPEAT = 4;
+const RUN_SPEED    = 100;
+const RUN_TIME     = 1.0;
+
+// Headings (calibrate so FRONT faces the target/object)
+const FRONT = 0, RIGHT = 90, BACK = 180, LEFT = 270;
+
+// ===== State =====
+let waitingForTap = false;
+let tapFlag = false;
+let moving = false;
+let collidedWhileMoving = false;
+
+// ===== Utilities =====
+function LED(r, g, b) {
+  if (typeof setMainLed === "function") setMainLed({ r: Math.floor(r), g: Math.floor(g), b: Math.floor(b) });
+}
+async function say(text) {
+  if (typeof speak === "function") await speak(text);
+}
+function tailOn(v = 255) { if (typeof setBackLed === "function") setBackLed(v|0); }
+function tailOff() { if (typeof setBackLed === "function") setBackLed(0); }
+function randomHeading() { const c = [0, 60, 120, 180, 240, 300]; return c[Math.floor(Math.random()*c.length)]; }
+
+// ===== Ear (listening) cue =====
+async function showEarAndListen() {
+  LED(255, 200, 120);  // warm attentive
+  tailOn(255);
+  await say("I'm listening. Say hello!");
+  let t = 0, step = 0.25;
+  while (t < LISTEN_S) { await delay(step); t += step; }
+  tailOff();
+  LED(0, 180, 255);    // calm blue
+  await say("I heard you. Hi!");
+}
+
+// ===== Hit reactions =====
+async function shake() {
+  await say("Ouch!");
+  LED(255, 80, 0);
+  for (let i = 0; i < SHAKE_REPEAT; i++) {
+    moving = true;
+    await roll(FRONT, 80, 0.12);
+    await roll(BACK,  80, 0.12);
+    moving = false;
+    await delay(0.05);
+  }
+  LED(0, 180, 255);
+}
+
+async function runAway() {
+  const h = randomHeading();
+  await say("Yikes!");
+  LED(255, 0, 60);
+  moving = true;
+  await roll(h, RUN_SPEED, RUN_TIME);
+  moving = false;
+  LED(0, 180, 255);
+}
+
+// ===== Helpers =====
+async function nod() {
+  moving = true;
+  await roll(FRONT, 40, 0.18);
+  await roll(BACK,  40, 0.18);
+  moving = false;
+  await delay(0.1);
+}
+
+async function waitForTap(timeoutS) {
+  let t = 0, step = 0.1;
+  while (t < timeoutS) {
+    if (tapFlag) { tapFlag = false; return true; }
+    await delay(step);
+    t += step;
+  }
+  await say("I'll start anyway.");
+  return false;
+}
+
+async function checkNavRecover() {
+  if (collidedWhileMoving) {
+    collidedWhileMoving = false;
+    await say("Oops, sorry! Going around.");
+    moving = true;
+    await roll(BACK, 70, 0.5);
+    await roll(RIGHT, 70, 0.5);
+    moving = false;
+    await delay(PAUSE);
+    // Random extra reaction on hit: shake or run
+    if (Math.random() < 0.5) await shake(); else await runAway();
+  }
+}
+
+async function safeEnableCollision(on) {
+  try {
+    if (typeof setCollisionDetectionEnabled === "function") setCollisionDetectionEnabled(on);
+    else if (typeof enableCollision === "function") await enableCollision(on);
+  } catch (e) { /* ignore */ }
+}
+
+// ===== Events =====
+async function onCollision(event) {
+  if (waitingForTap && !moving) {
+    tapFlag = true;                  // user tap
+    LED(255, 130, 0);                // surprised cue
+  } else {
+    collidedWhileMoving = true;      // hit while moving
+  }
+}
+
+// ===== Main =====
+async function startProgram() {
+  await safeEnableCollision(true);
+
+  LED(0, 90, 255);
+  tailOff();
+  await say("Hi, I'm Spot. Tap me when you're ready.");
+
+  // Turn 1
+  waitingForTap = true;
+  await waitForTap(TURN_WAIT_S);
+  waitingForTap = false;
+
+  // Voice moment
+  await showEarAndListen();
+
+  // Deixis + joint attention
+  LED(255, 170, 0);
+  await roll(FRONT, 0, 0.05);  // orient without moving
+  await delay(0.65);           // fixation
+  tailOn(255);
+  await say("Look over there.");
+  await nod();
+  tailOff();
+
+  // Proxemics
+  moving = true;
+  await roll(FRONT, SPEED, ARM_LENGTH);
+  moving = false;
+  await delay(PAUSE);
+  await checkNavRecover();
+
+  await say("Your turn. Tap me again.");
+
+  // Turn 2
+  waitingForTap = true;
+  await waitForTap(TURN_WAIT_S);
+  waitingForTap = false;
+
+  // Social navigation (scripted)
+  await say("Excuse me, going around.");
+  moving = true;
+  await roll(RIGHT, 70, 0.8);
+  await roll(FRONT, 70, 0.8);
+  await roll(LEFT,  70, 0.8);
+  moving = false;
+  await delay(PAUSE);
+  await checkNavRecover();
+
+  // Finish
+  LED(0, 255, 80);
+  await say("We did it! End of run.");
+  await delay(0.5);
+  exitProgram?.();  // new API
+  if (typeof exit_program === "function") exit_program(); // legacy API
+}
