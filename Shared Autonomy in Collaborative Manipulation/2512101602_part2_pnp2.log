@@ -1,0 +1,1430 @@
+
+[0;36m================================================================================[0m
+[0;36m  HRI Social Learner Manipulator - Full System Startup[0m
+[0;36m  Phase 4: Human-in-the-Loop Testing[0m
+[0;36m================================================================================[0m
+
+[1;33m================================================================================[0m
+[1;33m  HARDWARE MODE ENABLED - Connecting to real Kinova robot[0m
+[1;33m  Robot IP: 192.168.1.10[0m
+[1;33m  NOTE: ARM MOTION TESTING ONLY - Camera not included[0m
+[1;33m================================================================================[0m
+
+
+[0;34m>>> Setting up ROS 2 environment...[0m
+
+[0;32m[OK][0m Sourced ROS 2 Humble
+not found: "/root/ros2_ws/install/local_setup.bash"
+[0;32m[OK][0m Sourced project workspace: /home/snickers/Documents/git-repos/hri-social-learner-manipulator/install
+[0;32m[OK][0m Sourced ros2_ws (Kinova packages)
+
+[0;34m>>> Cleaning up stale processes from previous runs...[0m
+
+[0;36m[INFO][0m Cleaning up 15 stale FastRTPS shared memory files...
+The daemon is not running
+[0;36m[INFO][0m Waiting for processes to terminate...
+[0;32m[OK][0m Cleaned up 1 stale process group(s)
+
+[0;34m>>> Checking prerequisites...[0m
+
+[0;32m[OK][0m ROS 2 found: 
+[0;32m[OK][0m Python 3 found: Python 3.10.12
+[0;32m[OK][0m Perception MCP server found
+[0;32m[OK][0m MoveIt MCP server found
+[0;32m[OK][0m Conversational engine found
+[0;32m[OK][0m GOOGLE_API_KEY exported from .env file
+[0;32m[OK][0m All prerequisites satisfied
+
+[0;34m>>> Starting HARDWARE MODE (Real Kinova Robot)...[0m
+
+[0;36m[INFO][0m Robot IP: 192.168.1.10
+[1;33m[WARN][0m NOTE: Camera not included - ARM MOTION TESTING ONLY
+[0;36m[INFO][0m Checking network connectivity to robot...
+[0;32m[OK][0m Robot is reachable at 192.168.1.10
+[0;36m[INFO][0m Launching manipulation_scene.launch.py (hardware_mode=true)...
+[0;36m[INFO][0m Waiting for ros2_kortex driver to initialize (20 seconds)...
+[INFO] [launch]: All log files can be found below /home/snickers/.ros/log/2025-12-10-16-08-24-921799-snickers-jammy-18850
+[INFO] [launch]: Default logging verbosity is set to INFO
+warning: Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [launch.user]: HARDWARE MODE: Connecting to Kinova Gen3 Lite at 192.168.1.10
+[DEBUG] Saved resolved YAML to: /home/snickers/ros2_ws/install/kortex_description/share/kortex_description/arms/gen3_lite/6dof/config/ros2_controllers.yaml
+[INFO] [ros2_control_node-1]: process started with pid [18854]
+[INFO] [robot_state_publisher-2]: process started with pid [18856]
+[INFO] [spawner-3]: process started with pid [18858]
+[INFO] [spawner-4]: process started with pid [18860]
+[INFO] [spawner-5]: process started with pid [18862]
+[INFO] [spawner-6]: process started with pid [18864]
+[INFO] [spawner-7]: process started with pid [18866]
+[INFO] [robot_state_publisher-8]: process started with pid [18868]
+[INFO] [move_group-9]: process started with pid [18870]
+[ros2_control_node-1] [INFO] [1765400905.678028093] [controller_manager]: Subscribing to '~/robot_description' topic for robot description file.
+[ros2_control_node-1] [INFO] [1765400905.678865912] [controller_manager]: update rate is 1000 Hz
+[ros2_control_node-1] [INFO] [1765400905.678899760] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50
+[ros2_control_node-1] [WARN] [1765400905.679003694] [controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.
+[robot_state_publisher-2] [INFO] [1765400905.699593770] [robot_state_publisher]: got segment arm_link
+[robot_state_publisher-2] [INFO] [1765400905.699751462] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1765400905.699766157] [robot_state_publisher]: got segment dummy_link
+[robot_state_publisher-2] [INFO] [1765400905.699775329] [robot_state_publisher]: got segment end_effector_link
+[robot_state_publisher-2] [INFO] [1765400905.699784970] [robot_state_publisher]: got segment forearm_link
+[robot_state_publisher-2] [INFO] [1765400905.699793877] [robot_state_publisher]: got segment gripper_base_link
+[robot_state_publisher-2] [INFO] [1765400905.699802173] [robot_state_publisher]: got segment left_finger_dist_link
+[robot_state_publisher-2] [INFO] [1765400905.699810565] [robot_state_publisher]: got segment left_finger_prox_link
+[robot_state_publisher-2] [INFO] [1765400905.699819510] [robot_state_publisher]: got segment lower_wrist_link
+[robot_state_publisher-2] [INFO] [1765400905.699828437] [robot_state_publisher]: got segment right_finger_dist_link
+[robot_state_publisher-2] [INFO] [1765400905.699837425] [robot_state_publisher]: got segment right_finger_prox_link
+[robot_state_publisher-2] [INFO] [1765400905.699843177] [robot_state_publisher]: got segment shoulder_link
+[robot_state_publisher-2] [INFO] [1765400905.699848958] [robot_state_publisher]: got segment tool_frame
+[robot_state_publisher-2] [INFO] [1765400905.699854939] [robot_state_publisher]: got segment upper_wrist_link
+[robot_state_publisher-2] [INFO] [1765400905.699860398] [robot_state_publisher]: got segment world
+[ros2_control_node-1] [INFO] [1765400905.700165511] [controller_manager]: Received robot description file.
+[ros2_control_node-1] [INFO] [1765400905.700900107] [resource_manager]: Loading hardware 'KortexMultiInterfaceHardware' 
+[robot_state_publisher-8] [INFO] [1765400905.702748239] [robot_state_publisher]: got segment arm_link
+[robot_state_publisher-8] [INFO] [1765400905.702879482] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-8] [INFO] [1765400905.702890309] [robot_state_publisher]: got segment dummy_link
+[robot_state_publisher-8] [INFO] [1765400905.702896626] [robot_state_publisher]: got segment end_effector_link
+[robot_state_publisher-8] [INFO] [1765400905.702902923] [robot_state_publisher]: got segment forearm_link
+[robot_state_publisher-8] [INFO] [1765400905.702909008] [robot_state_publisher]: got segment gripper_base_link
+[robot_state_publisher-8] [INFO] [1765400905.702914707] [robot_state_publisher]: got segment left_finger_dist_link
+[robot_state_publisher-8] [INFO] [1765400905.702920754] [robot_state_publisher]: got segment left_finger_prox_link
+[robot_state_publisher-8] [INFO] [1765400905.702926199] [robot_state_publisher]: got segment lower_wrist_link
+[robot_state_publisher-8] [INFO] [1765400905.702942001] [robot_state_publisher]: got segment right_finger_dist_link
+[robot_state_publisher-8] [INFO] [1765400905.702947657] [robot_state_publisher]: got segment right_finger_prox_link
+[robot_state_publisher-8] [INFO] [1765400905.702952918] [robot_state_publisher]: got segment shoulder_link
+[robot_state_publisher-8] [INFO] [1765400905.702958392] [robot_state_publisher]: got segment tool_frame
+[robot_state_publisher-8] [INFO] [1765400905.702963861] [robot_state_publisher]: got segment upper_wrist_link
+[robot_state_publisher-8] [INFO] [1765400905.702969256] [robot_state_publisher]: got segment world
+[robot_state_publisher-8] [INFO] [1765400905.702975250] [robot_state_publisher]: got segment wrist_camera_link
+[robot_state_publisher-8] [INFO] [1765400905.702980731] [robot_state_publisher]: got segment wrist_camera_optical_frame
+[spawner-6] [INFO] [1765400905.703531187] [spawner_fault_controller]: waiting for service /controller_manager/list_controllers to become available...
+[move_group-9] [INFO] [1765400905.708404087] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0349251 seconds
+[move_group-9] [INFO] [1765400905.708475139] [moveit_robot_model.robot_model]: Loading robot model 'gen3_lite_gen3_lite_2f'...
+[move_group-9] [INFO] [1765400905.708485036] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[ros2_control_node-1] [INFO] [1765400905.714486412] [KortexMultiInterfaceHardware]: Setting severity threshold to DEBUG
+[ros2_control_node-1] [INFO] [1765400905.714555976] [resource_manager]: Initialize hardware 'KortexMultiInterfaceHardware' 
+[ros2_control_node-1] [INFO] [1765400905.714570746] [KortexMultiInterfaceHardware]: Configuring Hardware Interface
+[ros2_control_node-1] [INFO] [1765400905.714595957] [KortexMultiInterfaceHardware]: Robot ip is '192.168.1.10'
+[ros2_control_node-1] [INFO] [1765400905.714599934] [KortexMultiInterfaceHardware]: Username is 'admin'
+[ros2_control_node-1] [INFO] [1765400905.714606178] [KortexMultiInterfaceHardware]: Port used '10000'
+[ros2_control_node-1] [INFO] [1765400905.714609882] [KortexMultiInterfaceHardware]: Realtime port used '10001'
+[ros2_control_node-1] [INFO] [1765400905.714613289] [KortexMultiInterfaceHardware]: Session inactivity timeout is '60000'
+[ros2_control_node-1] [INFO] [1765400905.714617476] [KortexMultiInterfaceHardware]: Connection inactivity timeout is '2000'
+[ros2_control_node-1] [INFO] [1765400905.714620946] [KortexMultiInterfaceHardware]: Gripper joint name is 'right_finger_bottom_joint'
+[ros2_control_node-1] [INFO] [1765400905.714624234] [KortexMultiInterfaceHardware]: Listing all keys in hardware_parameters:
+[ros2_control_node-1] [INFO] [1765400905.714628500] [KortexMultiInterfaceHardware]: Prefix is 
+[ros2_control_node-1] [INFO] [1765400905.714632934] [KortexMultiInterfaceHardware]: updated gripper joint name is right_finger_bottom_joint
+[ros2_control_node-1] [INFO] [1765400905.714645999] [KortexMultiInterfaceHardware]: Connecting to robot at 192.168.1.10
+[ros2_control_node-1] [INFO] [1765400905.715325645] [KortexMultiInterfaceHardware]: Creating session for communication
+[spawner-4] [INFO] [1765400905.717414901] [spawner_joint_trajectory_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-3] [INFO] [1765400905.718378460] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-5] [INFO] [1765400905.719872514] [spawner_twist_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-7] [INFO] [1765400905.720466537] [spawner_gen3_lite_2f_gripper_controller]: waiting for service /controller_manager/list_controllers to become available...
+[ros2_control_node-1] [INFO] [1765400905.793924595] [KortexMultiInterfaceHardware]: Session created
+[move_group-9] [WARN] [1765400905.880140335] [moveit_robot_model.robot_model]: Could not identify parent group for end-effector 'end_effector'
+[move_group-9] [INFO] [1765400906.358409370] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[move_group-9] [INFO] [1765400906.358520510] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states
+[move_group-9] [INFO] [1765400906.358892616] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[move_group-9] [INFO] [1765400906.359151784] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects
+[move_group-9] [INFO] [1765400906.359162833] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[move_group-9] [INFO] [1765400906.359301521] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'
+[move_group-9] [INFO] [1765400906.359309503] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.
+[move_group-9] [INFO] [1765400906.359457954] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'
+[move_group-9] [INFO] [1765400906.359642943] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry
+[move_group-9] [WARN] [1765400906.359915805] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead
+[move_group-9] [ERROR] [1765400906.359923996] [moveit.ros.occupancy_map_monitor.middleware_handle]: No 3D sensor plugin(s) defined for octomap updates
+[ros2_control_node-1] [INFO] [1765400906.377576267] [KortexMultiInterfaceHardware]: Actuator count reported by robot is '6'
+[ros2_control_node-1] [INFO] [1765400906.377612681] [KortexMultiInterfaceHardware]: Using internal bus communication for gripper!
+[ros2_control_node-1] [INFO] [1765400906.377618837] [KortexMultiInterfaceHardware]: Hardware Interface successfully configured
+[ros2_control_node-1] [INFO] [1765400906.377638758] [resource_manager]: Successful initialization of hardware 'KortexMultiInterfaceHardware'
+[ros2_control_node-1] [DEBUG] [1765400906.377650111] [KortexMultiInterfaceHardware]: export_state_interfaces for joint: joint_1
+[ros2_control_node-1] [DEBUG] [1765400906.377658318] [KortexMultiInterfaceHardware]: export_state_interfaces for joint: joint_2
+[ros2_control_node-1] [DEBUG] [1765400906.377662658] [KortexMultiInterfaceHardware]: export_state_interfaces for joint: joint_3
+[ros2_control_node-1] [DEBUG] [1765400906.377666664] [KortexMultiInterfaceHardware]: export_state_interfaces for joint: joint_4
+[ros2_control_node-1] [DEBUG] [1765400906.377670390] [KortexMultiInterfaceHardware]: export_state_interfaces for joint: joint_5
+[ros2_control_node-1] [DEBUG] [1765400906.377674371] [KortexMultiInterfaceHardware]: export_state_interfaces for joint: joint_6
+[ros2_control_node-1] [DEBUG] [1765400906.377678162] [KortexMultiInterfaceHardware]: export_state_interfaces for joint: right_finger_bottom_joint
+[ros2_control_node-1] [INFO] [1765400906.377720058] [KortexMultiInterfaceHardware]: Gripper max vel and effort configured
+[ros2_control_node-1] [INFO] [1765400906.377802368] [resource_manager]: 'configure' hardware 'KortexMultiInterfaceHardware' 
+[ros2_control_node-1] [INFO] [1765400906.377811046] [resource_manager]: Successful 'configure' of hardware 'KortexMultiInterfaceHardware'
+[ros2_control_node-1] [INFO] [1765400906.377824346] [resource_manager]: 'activate' hardware 'KortexMultiInterfaceHardware' 
+[ros2_control_node-1] [INFO] [1765400906.377829591] [KortexMultiInterfaceHardware]: Activating KortexMultiInterfaceHardware...
+[ros2_control_node-1] [INFO] [1765400906.378374348] [KortexMultiInterfaceHardware]: Gripper initial position is '-62.895618'.
+[ros2_control_node-1] [INFO] [1765400906.378417506] [KortexMultiInterfaceHardware]: Initialize interconnect command to current gripper position
+[ros2_control_node-1] [INFO] [1765400906.379078410] [KortexMultiInterfaceHardware]: KortexMultiInterfaceHardware successfully activated!
+[ros2_control_node-1] [INFO] [1765400906.379096959] [resource_manager]: Successful 'activate' of hardware 'KortexMultiInterfaceHardware'
+[ros2_control_node-1] [DEBUG] [1765400906.379967934] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.380257751] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.380546985] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.380944925] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.381217338] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.381522661] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.381951442] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.382220080] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.382519760] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.382961641] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.383245894] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.383534472] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.383544658] [controller_manager]: Received robot description file.
+[ros2_control_node-1] [WARN] [1765400906.383577428] [controller_manager]: ResourceManager has already loaded an urdf file. Ignoring attempt to reload a robot description file.
+[ros2_control_node-1] [DEBUG] [1765400906.383948701] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.384211543] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.384476904] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.384999209] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.385274275] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.385542503] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.385996876] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.386319595] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.386577080] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.386938056] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.387185036] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.387455605] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.387914143] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.388185110] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.388455980] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.388913959] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.389184693] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.389433838] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.389893717] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.390185357] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.390433965] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.390894597] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.391152736] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.391437216] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.391917509] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.392188739] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.392457725] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.392914638] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.393184398] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.393433758] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.393946439] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.394207995] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.394473551] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.394938034] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.395204186] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.395441095] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.395914600] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.396186652] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.396446216] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.396918675] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.397188248] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.397454997] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.397913419] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.398183334] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.398433052] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.398893369] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.399162429] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.399433364] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.399897791] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.400162398] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.400412872] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.400872220] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.401123150] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.401391573] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.401641355] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.401943353] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.402220975] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.402468369] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.402993146] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.403261698] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.403510328] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.404012872] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.404259384] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.404510495] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.405004099] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.405260223] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.405510451] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.406003975] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.406239531] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.406468112] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.406979471] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.407221611] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.407447377] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.407969715] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.408242686] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.408468456] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.408975398] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.409198795] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.409432037] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.409957080] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.410201059] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.410426715] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.410951146] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.411198436] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.411426387] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.411949191] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.412200842] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.412452202] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.412975852] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.413198759] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.413427093] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.413955061] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.414199023] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.414426899] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.414953719] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.415179922] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.415406682] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.415635429] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.415931050] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.416177676] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.416430952] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.416970449] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.417212237] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.417448093] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.417976557] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.418222737] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.418513336] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.418974826] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.419215359] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.419448939] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.419917012] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.420156457] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.420385469] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.420636615] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.420930366] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.421156655] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.421385389] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.421614586] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.421928997] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.422156477] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.422385429] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.422613690] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.422928646] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.423157058] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.423385221] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.423614102] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.423934195] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.424176534] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.424406213] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.424635204] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.424928502] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.425156294] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.425385352] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.425613662] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.425984823] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.426218754] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.426446874] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.426977449] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.427219027] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.427479597] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.427979214] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.428217409] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.428447448] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.428949811] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.429198029] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.429425105] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.429975327] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.430218512] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.430446863] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.430987789] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.431219753] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.431448558] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.431998129] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.432240898] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.432496024] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.432989795] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.433219588] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.433446931] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.433980730] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.434216579] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.434447089] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.434979314] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.435199247] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.435431163] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.435976561] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.436223002] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.436494206] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.436989326] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.437219082] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.437446852] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.437978706] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.438220162] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.438446496] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.438978534] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.439220209] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.439446990] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.439982356] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.440219175] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.440469598] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.440982901] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.441218848] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.441446737] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.441975683] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.442219516] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.442447064] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.442993601] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.443219040] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.443447296] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.443981819] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.444218927] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.444471846] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.444998471] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.445239940] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.445468249] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.446001528] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.446240022] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.446469364] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.446977902] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.447228971] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.447460420] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.447981288] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.448223558] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.448477746] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.448977741] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.449230031] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.449450220] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.449993883] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.450220989] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.450453484] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.450999563] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.451222779] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.451448077] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.451982219] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.452219562] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.452447449] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.452990463] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.453241007] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.453512563] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.453990830] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.454239637] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.454490010] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.455029015] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.455288219] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.455562274] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.455817558] [controller_manager]: Loading controller 'fault_controller'
+[ros2_control_node-1] [DEBUG] [1765400906.455962377] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.456228163] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.456470854] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.456965622] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.457247306] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.457533353] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.457992212] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.458287017] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.458581157] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.458960020] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.459229858] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.459491160] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.459960372] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.460217909] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.460447602] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[spawner-6] [INFO] [1765400906.460729428] [spawner_fault_controller]: [94mLoaded [1mfault_controller[0m
+[ros2_control_node-1] [DEBUG] [1765400906.460939701] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.461208273] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.461341052] [controller_manager]: Configuring controller 'fault_controller'
+[ros2_control_node-1] [DEBUG] [1765400906.461456610] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.461938333] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.462228441] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.462481588] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.664363593] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.664976486] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.665274926] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[spawner-6] [INFO] [1765400906.665528405] [spawner_fault_controller]: [92mConfigured and activated [1mfault_controller[0m
+[ros2_control_node-1] [DEBUG] [1765400906.665589981] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.665745132] [controller_manager]: Loading controller 'joint_trajectory_controller'
+[ros2_control_node-1] [DEBUG] [1765400906.666009698] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.666312113] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.666602204] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.666980322] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.667306280] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.667559039] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.667975776] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.668221801] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.668497151] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.668984489] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.669270127] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.669569898] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.669985026] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.670228211] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.670501836] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.670981424] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.671229511] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.671528938] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.672005496] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.672269777] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.672526155] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [WARN] [1765400906.672841963] [joint_trajectory_controller]: [Deprecated]: "allow_nonzero_velocity_at_trajectory_end" is set to true. The default behavior will change to false.
+[ros2_control_node-1] [DEBUG] [1765400906.672941348] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.673198052] [controller_manager]: Loading controller 'twist_controller'
+[ros2_control_node-1] [DEBUG] [1765400906.673203822] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.673503593] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.673917512] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[spawner-4] [INFO] [1765400906.674160078] [spawner_joint_trajectory_controller]: [94mLoaded [1mjoint_trajectory_controller[0m
+[ros2_control_node-1] [DEBUG] [1765400906.674186206] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.674463487] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.674968058] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.675230527] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.675521160] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.675977100] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.676298638] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.676608121] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.676982578] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.677274600] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.677539975] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.677984403] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.678259862] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.678549117] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.678996988] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.679209419] [controller_manager]: Loading controller 'joint_state_broadcaster'
+[ros2_control_node-1] [DEBUG] [1765400906.679292506] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.679540457] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.679980423] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[spawner-5] [INFO] [1765400906.680158612] [spawner_twist_controller]: [94mLoaded [1mtwist_controller[0m
+[ros2_control_node-1] [DEBUG] [1765400906.680243164] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.680491834] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.681347149] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.681615671] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.681995628] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.682287563] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.682643186] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.682985680] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.683297762] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.683570354] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.683994901] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.684142089] [controller_manager]: Loading controller 'gen3_lite_2f_gripper_controller'
+[ros2_control_node-1] [DEBUG] [1765400906.684304815] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.684613314] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[spawner-3] [INFO] [1765400906.684649217] [spawner_joint_state_broadcaster]: [94mLoaded [1mjoint_state_broadcaster[0m
+[ros2_control_node-1] [DEBUG] [1765400906.685022320] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.685555604] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.686012032] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.686314886] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.686660251] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.686985654] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.687250850] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.687522670] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.687944813] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.688200525] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.688470868] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.688751586] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.688996628] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.689127232] [controller_manager]: Configuring controller 'joint_trajectory_controller'
+[ros2_control_node-1] [DEBUG] [1765400906.689270104] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.689346830] [joint_trajectory_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.
+[ros2_control_node-1] [INFO] [1765400906.689395278] [joint_trajectory_controller]: Command interfaces are [position] and state interfaces are [position velocity].
+[ros2_control_node-1] [INFO] [1765400906.689443499] [joint_trajectory_controller]: Using 'splines' interpolation method.
+[ros2_control_node-1] [DEBUG] [1765400906.689508529] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.689960248] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[spawner-7] [INFO] [1765400906.690068466] [spawner_gen3_lite_2f_gripper_controller]: [94mLoaded [1mgen3_lite_2f_gripper_controller[0m
+[ros2_control_node-1] [DEBUG] [1765400906.690217391] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.690524021] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.690971039] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.691191858] [joint_trajectory_controller]: Controller state will be published at 100.00 Hz.
+[ros2_control_node-1] [DEBUG] [1765400906.691274974] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.691539745] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.691977740] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.692264999] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.692552914] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.692979021] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.693072346] [joint_trajectory_controller]: Action status changes will be monitored at 20.00 Hz.
+[ros2_control_node-1] [DEBUG] [1765400906.693239281] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.693517376] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.693935767] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.694202767] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.694487700] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.694931773] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.695215736] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.695483351] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.695806070] [controller_manager]: Configuring controller 'twist_controller'
+[ros2_control_node-1] [DEBUG] [1765400906.695909357] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.696161433] [twist_controller]: configure successful
+[ros2_control_node-1] [DEBUG] [1765400906.696211055] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.696537213] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.696632646] [controller_manager]: Configuring controller 'joint_state_broadcaster'
+[ros2_control_node-1] [INFO] [1765400906.696670073] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[ros2_control_node-1] [DEBUG] [1765400906.696996329] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.697283645] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.697553272] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.698042811] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.698352850] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.698604476] [controller_manager]: Configuring controller 'gen3_lite_2f_gripper_controller'
+[ros2_control_node-1] [DEBUG] [1765400906.698634510] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [INFO] [1765400906.698644875] [gen3_lite_2f_gripper_controller]: Action status changes will be monitored at 20.000000 Hz.
+[ros2_control_node-1] [DEBUG] [1765400906.699036022] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[ros2_control_node-1] [DEBUG] [1765400906.699320576] [KortexMultiInterfaceHardware]: No controller active in LOW_LEVEL_SERVOING mode !
+[move_group-9] [INFO] [1765400906.758777692] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'
+[move_group-9] [INFO] [1765400906.767180126] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'
+[move_group-9] [INFO] [1765400906.769135275] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000
+[move_group-9] [INFO] [1765400906.769144011] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000
+[move_group-9] [INFO] [1765400906.769146873] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000
+[move_group-9] [INFO] [1765400906.769159170] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000
+[move_group-9] [INFO] [1765400906.769167922] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000
+[move_group-9] [INFO] [1765400906.769170695] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-9] [INFO] [1765400906.769177142] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-9] [INFO] [1765400906.769179705] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was not set. Using default value: 0.020000
+[move_group-9] [INFO] [1765400906.769182342] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100
+[move_group-9] [INFO] [1765400906.769188439] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'
+[move_group-9] [INFO] [1765400906.769190450] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'
+[move_group-9] [INFO] [1765400906.769192183] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'
+[move_group-9] [INFO] [1765400906.769193982] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'
+[move_group-9] [INFO] [1765400906.769195619] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'
+[move_group-9] [INFO] [1765400906.769213163] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'
+[move_group-9] [INFO] [1765400906.770558642] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'
+[move_group-9] [INFO] [1765400906.772475439] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning
+[move_group-9] [INFO] [1765400906.774236796] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP 
+[move_group-9] [INFO] [1765400906.774246657] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC
+[move_group-9] [INFO] [1765400906.775119274] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC]
+[move_group-9] [INFO] [1765400906.775128120] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN
+[move_group-9] [INFO] [1765400906.775722120] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN]
+[move_group-9] [INFO] [1765400906.775729834] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP
+[move_group-9] [INFO] [1765400906.776290173] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP]
+[move_group-9] [INFO] [1765400906.776297109] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'
+[move_group-9] [INFO] [1765400906.776648731] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'
+[move_group-9] [INFO] [1765400906.779092209] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'
+[move_group-9] [INFO] [1765400906.780387915] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000
+[move_group-9] [INFO] [1765400906.780394974] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000
+[move_group-9] [INFO] [1765400906.780397801] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000
+[move_group-9] [INFO] [1765400906.780410963] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000
+[move_group-9] [INFO] [1765400906.780419438] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000
+[move_group-9] [INFO] [1765400906.780422053] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-9] [INFO] [1765400906.780428976] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-9] [INFO] [1765400906.780431631] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000
+[move_group-9] [INFO] [1765400906.780434008] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100
+[move_group-9] [INFO] [1765400906.780440805] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'
+[move_group-9] [INFO] [1765400906.780443555] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'
+[move_group-9] [INFO] [1765400906.780445283] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'
+[move_group-9] [INFO] [1765400906.780447062] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'
+[move_group-9] [INFO] [1765400906.780448876] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'
+[move_group-9] [INFO] [1765400906.780450509] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'
+[move_group-9] [INFO] [1765400906.792913299] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for joint_trajectory_controller
+[move_group-9] [INFO] [1765400906.792947997] [moveit.plugins.moveit_simple_controller_manager]: Max effort set to 0.0
+[INFO] [spawner-6]: process has finished cleanly [pid 18864]
+[move_group-9] [INFO] [1765400906.793985317] [moveit.plugins.moveit_simple_controller_manager]: Added GripperCommand controller for gen3_lite_2f_gripper_controller
+[move_group-9] [INFO] [1765400906.794072736] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765400906.794085397] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765400906.794260675] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers
+[move_group-9] [INFO] [1765400906.794270979] [move_group.move_group]: MoveGroup debug mode is ON
+[move_group-9] [INFO] [1765400906.802492369] [move_group.move_group]: 
+[move_group-9] 
+[move_group-9] ********************************************************
+[move_group-9] * MoveGroup using: 
+[move_group-9] *     - ApplyPlanningSceneService
+[move_group-9] *     - ClearOctomapService
+[move_group-9] *     - CartesianPathService
+[move_group-9] *     - ExecuteTrajectoryAction
+[move_group-9] *     - GetPlanningSceneService
+[move_group-9] *     - KinematicsService
+[move_group-9] *     - MoveAction
+[move_group-9] *     - MotionPlanService
+[move_group-9] *     - QueryPlannersService
+[move_group-9] *     - StateValidationService
+[move_group-9] ********************************************************
+[move_group-9] 
+[move_group-9] [INFO] [1765400906.802522530] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner
+[move_group-9] [INFO] [1765400906.802529784] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete
+[move_group-9] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-9] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-9] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-9] [0m[96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...
+[move_group-9] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-9] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-9] [0m[96mLoading 'move_group/MoveGroupMoveAction'...
+[move_group-9] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-9] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-9] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-9] [0m[92m
+[move_group-9] You can start planning now!
+[move_group-9] 
+[INFO] [spawner-5]: process has finished cleanly [pid 18862]
+[spawner-4] [INFO] [1765400906.909909437] [spawner_joint_trajectory_controller]: [92mConfigured and activated [1mjoint_trajectory_controller[0m
+[spawner-3] [INFO] [1765400906.911783548] [spawner_joint_state_broadcaster]: [92mConfigured and activated [1mjoint_state_broadcaster[0m
+[INFO] [spawner-3]: process has finished cleanly [pid 18858]
+[INFO] [spawner-4]: process has finished cleanly [pid 18860]
+[spawner-7] [INFO] [1765400907.117859217] [spawner_gen3_lite_2f_gripper_controller]: [92mConfigured and activated [1mgen3_lite_2f_gripper_controller[0m
+[INFO] [spawner-7]: process has finished cleanly [pid 18866]
+[0;36m[INFO][0m Verifying robot connection...
+[0;32m[OK][0m Robot connected - /joint_states topic available
+[0;36m[INFO][0m Waiting for controllers to initialize...
+[0;36m[INFO][0m Clearing robot faults...
+[1;33m[WARN][0m Could not clear faults (service may not be available yet)
+
+[0;34m>>> Moving robot to experiment starting position[0m
+
+[INFO] [1765400937.457226398] [startup_position_setter]: Moving to experiment_start: array('d', [-1.819, -0.146, -1.746, 0.573, -1.261, -1.639])
+[0;32m[OK][0m Robot at experiment starting position
+[0;32m[OK][0m Hardware mode ready
+
+[0;34m>>> Starting conversational engine...[0m
+
+[0;36m[INFO][0m Starting FastAPI server...
+[0;36m[INFO][0m Waiting for server to initialize (may take up to 30 seconds)...
+2025-12-10 16:09:04.452 | INFO     | src.conversation.engine_factory:initialize_factory:212 - Initializing ConversationEngineFactory
+/home/snickers/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:266: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+2025-12-10 16:09:04.600 | DEBUG    | src.conversation.engine_factory:register_engine:40 - Registered engine type: manual_turn -> ManualTurnEngine
+2025-12-10 16:09:04.600 | INFO     | src.conversation.engine_factory:initialize_factory:218 - Registered ManualTurnEngine
+2025-12-10 16:09:04.601 | DEBUG    | src.conversation.engine_factory:register_engine:40 - Registered engine type: single_utterance -> SingleUtteranceEngine
+2025-12-10 16:09:04.601 | INFO     | src.conversation.engine_factory:initialize_factory:223 - Registered SingleUtteranceEngine
+2025-12-10 16:09:04.601 | INFO     | src.conversation.engine_factory:initialize_factory:225 - Factory initialization complete
+2025-12-10 16:09:04.617 | INFO     | __main__:create_application:171 - 📁 Mounted static files from /home/snickers/Documents/git-repos/hri-social-learner-manipulator/conversational_engine/static
+2025-12-10 16:09:04.617 | INFO     | __main__:create_application:182 - 📄 Pre-loaded voice_client.html (43960 bytes)
+🔥 BALAM PLATFORM STARTING - LOGS SHOULD APPEAR BELOW
+[32m16:09:04.623[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m | [1m✅ LOGGING IS WORKING - You should see this message![0m
+🔍 DEBUG: If you see this print but not the logger message above, there's a logging issue
+[32m16:09:04.628[0m | [1mINFO    [0m | [36m__main__[0m:[36mcreate_application[0m | [1m📁 Mounted static files from /home/snickers/Documents/git-repos/hri-social-learner-manipulator/conversational_engine/static[0m
+[32m16:09:04.628[0m | [1mINFO    [0m | [36m__main__[0m:[36mcreate_application[0m | [1m📄 Pre-loaded voice_client.html (43960 bytes)[0m
+[32m16:09:04.629[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m | [1m🚀 Starting VoiceOrch Platform[0m
+[32m16:09:04.629[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m | [1mDebug mode: False[0m
+[32m16:09:04.629[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m | [1mWebSocket port: 8000[0m
+[32m16:09:04.629[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m | [1mLLM provider: google[0m
+[32m16:09:04.630[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m | [1mLLM model: gemini-2.5-flash-lite[0m
+[32m16:09:04.630[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m | [1m🌐 Starting uvicorn server...[0m
+🌐 Server starting on http://0.0.0.0:8000
+🔗 WebSocket endpoint: ws://localhost:8000/ws/{session_id}
+🎤 Voice Client: http://localhost:8000/client
+[32m16:09:04.644[0m | [1mINFO    [0m | [36msrc.main[0m:[36mcreate_application[0m | [1m📁 Mounted static files from /home/snickers/Documents/git-repos/hri-social-learner-manipulator/conversational_engine/static[0m
+[32m16:09:04.644[0m | [1mINFO    [0m | [36msrc.main[0m:[36mcreate_application[0m | [1m📄 Pre-loaded voice_client.html (43960 bytes)[0m
+INFO:     Started server process [19134]
+INFO:     Waiting for application startup.
+[32m16:09:04.646[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m | [1m🔄 FastAPI lifespan startup...[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.main[0m:[36minitialize[0m | [1m🚀 Initializing VoiceOrch Platform...[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.main[0m:[36minitialize[0m | [1m📱 Initializing SingleUtteranceEngine...[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36m__init__[0m | [1mState machine initialized[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.conversation.base_engine[0m:[36m__init__[0m | [1mSingleUtteranceEngine created[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36m__init__[0m | [1mSingleUtteranceEngine created[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1mInitializing SingleUtteranceEngine...[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.conversation.base_engine[0m:[36m_initialize_common_components[0m | [1mInitializing SingleUtteranceEngine...[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36m__init__[0m | [1mMCPDiscoveryManager initialized[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36minitialize[0m | [1mMCP discovery and health monitoring started[0m
+[32m16:09:04.648[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36mdiscover_mcps[0m | [1mStarting MCP server discovery...[0m
+[32m16:09:04.649[0m | [1mINFO    [0m | [36msrc.mcp.config_loader[0m:[36mload_mcp_config[0m | [1mLoaded MCP server config: moveit (stdio)[0m
+[32m16:09:04.649[0m | [1mINFO    [0m | [36msrc.mcp.config_loader[0m:[36mload_mcp_config[0m | [1mSuccessfully loaded 1 MCP server configurations from /home/snickers/Documents/git-repos/hri-social-learner-manipulator/conversational_engine/mcp-config.json[0m
+[32m16:09:04.649[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36mdiscover_mcps[0m | [1mConfig file discovery found 1 servers[0m
+[32m16:09:04.649[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36mconnect[0m | [1mSpawning MCP server: python3 /home/snickers/Documents/git-repos/hri-social-learner-manipulator/mcp_servers/moveit_mcp_server.py[0m
+[32m16:09:04.649[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36mdiscover_mcps[0m | [1mStarting MCP server discovery...[0m
+[32m16:09:04.650[0m | [1mINFO    [0m | [36msrc.mcp.config_loader[0m:[36mload_mcp_config[0m | [1mLoaded MCP server config: moveit (stdio)[0m
+[32m16:09:04.650[0m | [1mINFO    [0m | [36msrc.mcp.config_loader[0m:[36mload_mcp_config[0m | [1mSuccessfully loaded 1 MCP server configurations from /home/snickers/Documents/git-repos/hri-social-learner-manipulator/conversational_engine/mcp-config.json[0m
+[32m16:09:04.650[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36mdiscover_mcps[0m | [1mConfig file discovery found 1 servers[0m
+[32m16:09:04.650[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36mconnect[0m | [1mSpawning MCP server: python3 /home/snickers/Documents/git-repos/hri-social-learner-manipulator/mcp_servers/moveit_mcp_server.py[0m
+[32m16:09:06.726[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: stdio_connected[0m
+[32m16:09:06.726[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36mconnect[0m | [1mConnected to stdio MCP server: moveit[0m
+[32m16:09:06.726[0m | [1mINFO    [0m | [36msrc.mcp.client_factory[0m:[36m_create_stdio_client[0m | [1mCreated stdio MCP client for: moveit[0m
+[32m16:09:06.727[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: stdio_connected[0m
+[32m16:09:06.727[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36mconnect[0m | [1mConnected to stdio MCP server: moveit[0m
+[32m16:09:06.727[0m | [1mINFO    [0m | [36msrc.mcp.client_factory[0m:[36m_create_stdio_client[0m | [1mCreated stdio MCP client for: moveit[0m
+[32m16:09:06.730[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: capabilities_retrieved[0m
+[32m16:09:06.731[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: server_registered[0m
+[32m16:09:06.731[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36m_register_mcp_server_from_config[0m | [1mRegistered MCP server: moveit (stdio) with 11 tools[0m
+[32m16:09:06.731[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36mdiscover_mcps[0m | [1mMCP discovery completed. Active servers: 1[0m
+[32m16:09:06.731[0m | [1mINFO    [0m | [36msrc.conversation.base_engine[0m:[36m_initialize_common_components[0m | [1mMCP discovery completed successfully[0m
+DATABASE_DEBUG: SQLite database path is /home/snickers/Documents/git-repos/hri-social-learner-manipulator/conversational_engine/sessions.db
+[32m16:09:06.731[0m | [1mINFO    [0m | [36msrc.session.storage[0m:[36minitialize[0m | [1mSQLite session storage initialized[0m
+[32m16:09:06.732[0m | [1mINFO    [0m | [36msrc.session.manager[0m:[36minitialize[0m | [1mSessionManager initialized successfully[0m
+[32m16:09:06.732[0m | [1mINFO    [0m | [36msrc.conversation.base_engine[0m:[36m_initialize_common_components[0m | [1m🎉 SingleUtteranceEngine shared components initialized[0m
+[32m16:09:06.732[0m | [1mINFO    [0m | [36msrc.conversation.base_engine[0m:[36m_initialize_common_components[0m | [1m🔍 Verifying SingleUtteranceEngine components:[0m
+[32m16:09:06.732[0m | [1mINFO    [0m | [36msrc.conversation.base_engine[0m:[36m_initialize_common_components[0m | [1m   - mcp_manager: ✅ SET[0m
+[32m16:09:06.732[0m | [1mINFO    [0m | [36msrc.conversation.base_engine[0m:[36m_initialize_common_components[0m | [1m   - session_manager: ✅ SET[0m
+[32m16:09:06.732[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36m__init__[0m | [1mSingleUtteranceAudioProcessor created[0m
+[32m16:09:06.732[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36minitialize[0m | [1mInitializing SingleUtteranceAudioProcessor...[0m
+[32m16:09:06.775[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: capabilities_retrieved[0m
+[32m16:09:06.775[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: server_registered[0m
+[32m16:09:06.775[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36m_register_mcp_server_from_config[0m | [1mRegistered MCP server: moveit (stdio) with 11 tools[0m
+[32m16:09:06.775[0m | [1mINFO    [0m | [36msrc.mcp.discovery[0m:[36mdiscover_mcps[0m | [1mMCP discovery completed. Active servers: 1[0m
+[32m16:09:06.988[0m | [1mINFO    [0m | [36msrc.audio.stt[0m:[36m_create_recognizer_if_not_exists[0m | [1mUsing existing STT V2 Recognizer: balam-recognizer-en-us[0m
+[32m16:09:07.246[0m | [1mINFO    [0m | [36msrc.audio.stt[0m:[36minitialize[0m | [1mGoogle STT V2 client initialized successfully with service account credentials[0m
+[32m16:09:07.475[0m | [1mINFO    [0m | [36msrc.audio.tts[0m:[36minitialize[0m | [1mGoogle TTS client initialized successfully with service account credentials[0m
+[32m16:09:07.475[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36minitialize[0m | [1m🎉 SingleUtteranceAudioProcessor initialized successfully[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m🎉 SingleUtteranceEngine initialized successfully[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m🔍 Verifying SingleUtteranceEngine components:[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m   - mcp_manager: ✅ SET[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m   - audio_processor: ✅ SET[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m   - graph_runner: ✅ SET[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m   - session_manager: ✅ SET[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m🔍 AudioProcessor details:[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m   - _initialized: True[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m   - tts_client: ✅ SET[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36minitialize[0m | [1m   - stt_client: ✅ SET[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.main[0m:[36minitialize[0m | [1m✅ SingleUtteranceEngine initialized successfully[0m
+[32m16:09:07.476[0m | [1mINFO    [0m | [36msrc.main[0m:[36minitialize[0m | [1m🔌 Initializing ConversationWebSocketHandler...[0m
+[32m16:09:07.477[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m__init__[0m | [1mConversationWebSocketHandler initialized[0m
+[32m16:09:07.477[0m | [1mINFO    [0m | [36msrc.main[0m:[36minitialize[0m | [1m✅ ConversationWebSocketHandler initialized successfully[0m
+[32m16:09:07.477[0m | [1mINFO    [0m | [36msrc.main[0m:[36minitialize[0m | [1m🎉 VoiceOrch Platform initialized successfully[0m
+[32m16:09:07.477[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m | [1m💾 Storing components in app.state...[0m
+[32m16:09:07.477[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m | [1m🔍 Verifying app.state contents...[0m
+[32m16:09:07.477[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m | [1m   - conversation_engine: ✅ SET[0m
+[32m16:09:07.477[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m | [1m   - websocket_handler: ✅ SET[0m
+[32m16:09:07.477[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m | [1m✅ FastAPI lifespan startup completed successfully[0m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:40190 - "GET /health HTTP/1.1" 200 OK
+[0;32m[OK][0m Conversational engine started and healthy (PID: 19134)
+
+[0;34m>>> System Status[0m
+
+
+[0;32mAll components started successfully![0m
+
+Running processes:
+  [0;32m[RUNNING][0m PID 18850
+  [0;32m[RUNNING][0m PID 19134
+
+[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+
+  [0;32mVoice Client:[0m  http://localhost:8000/client
+  [0;32mAPI Endpoint:[0m  http://localhost:8000/api/v1/converse
+  [0;32mWebSocket:[0m     ws://localhost:8000/ws/{session_id}
+  [0;32mHealth Check:[0m  http://localhost:8000/health
+
+
+INFO:     127.0.0.1:40198 - "GET /client HTTP/1.1" 200 OK
+  [0;32m[VERIFIED][0m /client endpoint responding
+
+[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+
+[1;33mPress Ctrl+C to stop all components[0m
+
+INFO:     127.0.0.1:40210 - "GET /client HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40210 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+[32m16:09:09.547[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m | [1m🔌 WebSocket connection request received - Session: 28c33155-64d0-445e-b0b7-870b5e06c5f6, Client: 127.0.0.1, URL: ws://localhost:8000/ws/28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:09.547[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m | [1m🔍 Checking app.state contents...[0m
+[32m16:09:09.548[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m | [1m   - app.state attributes: [][0m
+[32m16:09:09.548[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m | [1m🔍 Handler lookup results:[0m
+[32m16:09:09.548[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m | [1m   - websocket_handler: ✅ FOUND[0m
+[32m16:09:09.548[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m | [1m   - conversation_engine: ✅ FOUND[0m
+[32m16:09:09.548[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m | [1m✅ WebSocket handler found, proceeding with connection for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:09.548[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mhandle_connection[0m | [1m🤝 Attempting to accept WebSocket connection for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+INFO:     127.0.0.1:40222 - "WebSocket /ws/28c33155-64d0-445e-b0b7-870b5e06c5f6" [accepted]
+[32m16:09:09.549[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mhandle_connection[0m | [1m✅ WebSocket connection accepted for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:09.549[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mhandle_connection[0m | [1m📝 Connection stored in active_connections for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:09.549[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mhandle_connection[0m | [1m🌐 WebSocket connection established successfully - Session: 28c33155-64d0-445e-b0b7-870b5e06c5f6, Client: 127.0.0.1, Total connections: 1[0m
+[32m16:09:09.549[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mhandle_connection[0m | [1m📤 Sending initial state update for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+INFO:     connection open
+[32m16:09:09.551[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mhandle_connection[0m | [1m✅ Initial state update sent successfully for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:09.551[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mhandle_connection[0m | [1m👂 Starting message listener loop for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:14.370[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🎯 Processing WebSocket message[0m
+[32m16:09:14.370[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🎬 Handling start_conversation for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:14.370[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_start_conversation[0m | [1mStarting conversation for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:14.370[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m✅ start_conversation handled successfully for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:14.370[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:14.371[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:09:14.373[0m | [1mINFO    [0m | [36msrc.session.manager[0m:[36mget_or_create_session[0m | [1mNew session created[0m
+[32m16:09:14.373[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:14.373[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:09:14.373[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:09:14.373[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:09:19.130[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:09:19.146[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:09:19.146[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:09:19.147[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Go to a water bottle....[0m
+[32m16:09:19.147[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:19.147[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:09:19.957[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move_to_observe, tool_args={}[0m
+[32m16:09:19.957[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:09:19.958[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:09:20.184[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:09:20.184[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:09:20.184[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:09:20.192[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving to observation position.[0m
+[32m16:09:20.192[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:09:20.192[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:09:20.192[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move_to_observe, args={}[0m
+[32m16:09:20.194[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move_to_observe, args={}[0m
+[32m16:09:20.195[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] _move_to_observe ENTRY[0m
+[ros2_control_node-1] [INFO] [1765400960.197591912] [joint_trajectory_controller]: Received new action goal
+[ros2_control_node-1] [INFO] [1765400960.197658488] [joint_trajectory_controller]: Accepted new action goal
+INFO:     127.0.0.1:40216 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[ros2_control_node-1] [INFO] [1765400963.199138541] [joint_trajectory_controller]: Goal reached, success!
+[32m16:09:23.257[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] send_trajectory returned: success=True, msg=Trajectory executed successfully[0m
+[32m16:09:23.259[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:09:23.260[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move_to_observe, result={'content': [{'type': 'text', 'text': '{\n  "success": true,\n  "message": "Trajectory executed successfully",\n  "pose_name": "observe",\n  "description": "Calibrated pose where all objects on table are visible",\n  "joint_positions": [\n    0.5,\n    0.4,\n    -1.0,\n    1.3,\n    -1.5,\n    0.0\n[0m
+[32m16:09:23.260[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mOptional verification tool completed - breaking loop[0m
+[32m16:09:23.260[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:09:23.260[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:09:23.734[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:09:23.734[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:09:23.734[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:09:23.735[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:09:23.735[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:23.752[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:09:23.753[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:09:23.753[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:23.758[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:23.758[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:23.759[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:09:23.759[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:23.759[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:09:23.759[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:09:23.759[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:09:29.151[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:09:29.186[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:09:29.186[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:09:29.186[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Move to the water bottle....[0m
+[32m16:09:29.186[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:29.186[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:09:30.287[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move_to_observe, tool_args={}[0m
+[32m16:09:30.287[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:09:30.287[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:09:30.595[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:09:30.595[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:09:30.595[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:09:30.603[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving to observation position.[0m
+[32m16:09:30.603[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:09:30.603[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:09:30.603[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move_to_observe, args={}[0m
+[32m16:09:30.605[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move_to_observe, args={}[0m
+[32m16:09:30.606[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] _move_to_observe ENTRY[0m
+[ros2_control_node-1] [INFO] [1765400970.609752713] [joint_trajectory_controller]: Received new action goal
+[ros2_control_node-1] [INFO] [1765400970.609810021] [joint_trajectory_controller]: Accepted new action goal
+[ros2_control_node-1] [INFO] [1765400973.611162933] [joint_trajectory_controller]: Goal reached, success!
+[32m16:09:33.666[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] send_trajectory returned: success=True, msg=Trajectory executed successfully[0m
+[32m16:09:33.668[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:09:33.668[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move_to_observe, result={'content': [{'type': 'text', 'text': '{\n  "success": true,\n  "message": "Trajectory executed successfully",\n  "pose_name": "observe",\n  "description": "Calibrated pose where all objects on table are visible",\n  "joint_positions": [\n    0.5,\n    0.4,\n    -1.0,\n    1.3,\n    -1.5,\n    0.0\n[0m
+[32m16:09:33.668[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mOptional verification tool completed - breaking loop[0m
+[32m16:09:33.668[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:09:33.669[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:09:34.183[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:09:34.183[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:09:34.183[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:09:34.183[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:09:34.184[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:34.195[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:09:34.195[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:09:34.196[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:34.202[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:34.202[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:34.203[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:09:34.203[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:34.203[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:09:34.203[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:09:34.203[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:09:38.913[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:09:38.943[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:09:38.943[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:09:38.943[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Move to, right?...[0m
+[32m16:09:38.943[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:38.943[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:09:39.896[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:09:39.897[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:09:39.899[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🎯 Processing WebSocket message[0m
+[32m16:09:39.899[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🏓 Handling ping for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:39.899[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m✅ ping handled successfully for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:40.329[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:09:40.329[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:09:40.329[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:09:40.329[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:09:40.330[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:40.341[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:09:40.341[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:09:40.341[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:40.350[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:40.351[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:40.351[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:09:40.351[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:40.351[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:09:40.351[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:09:40.351[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:09:48.918[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:09:48.932[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:09:48.932[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:09:48.932[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: About 40 cm....[0m
+[32m16:09:48.932[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:48.933[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:09:49.945[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move, tool_args={'direction': 'right', 'distance': 0.4}[0m
+[32m16:09:49.945[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:09:49.945[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:09:50.220[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:09:50.220[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:09:50.220[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:09:50.224[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving right.[0m
+[32m16:09:50.224[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:09:50.224[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:09:50.224[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move, args={'direction': 'right', 'distance': 0.4, 'angle': 15.0}[0m
+[32m16:09:50.227[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move, args={'direction': 'right', 'distance': 0.4, 'angle': 15.0}[0m
+[move_group-9] [INFO] [1765400990.239662198] [moveit_move_group_default_capabilities.plan_service_capability]: Received new planning service request...
+[move_group-9] [INFO] [1765400990.241748927] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-9] [WARN] [1765400990.281942685] [moveit_trajectory_processing.time_optimal_trajectory_generation]: Joint acceleration limits are not defined. Using the default 1 rad/s^2. You can define acceleration limits in the URDF or joint_limits.yaml.
+[move_group-9] [INFO] [1765400990.286936109] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request
+[move_group-9] [INFO] [1765400990.287033712] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received
+[move_group-9] [INFO] [1765400990.287049956] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765400990.287060039] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765400990.287109386] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[move_group-9] [INFO] [1765400990.287294238] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...
+[move_group-9] [INFO] [1765400990.287333309] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765400990.287356048] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765400990.287486625] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to joint_trajectory_controller
+[ros2_control_node-1] [INFO] [1765400990.287757022] [joint_trajectory_controller]: Received new action goal
+[ros2_control_node-1] [INFO] [1765400990.287787824] [joint_trajectory_controller]: Accepted new action goal
+[move_group-9] [INFO] [1765400990.287850826] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: joint_trajectory_controller started execution
+[move_group-9] [INFO] [1765400990.287857528] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[ros2_control_node-1] [INFO] [1765400994.594131527] [joint_trajectory_controller]: Goal reached, success!
+[move_group-9] [INFO] [1765400994.638133152] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'joint_trajectory_controller' successfully finished
+[move_group-9] [INFO] [1765400994.641192519] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...
+[move_group-9] [INFO] [1765400994.641266105] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: SUCCEEDED
+[32m16:09:54.644[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:09:54.645[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move, result={'content': [{'type': 'text', 'text': '{\n  "success": true,\n  "message": "Moved to pose (-0.362, 0.285, 0.459)",\n  "start_pose": {\n    "x": -0.3618,\n    "y": -0.1146,\n    "z": 0.4588\n  },\n  "end_pose": {\n    "x": -0.3635,\n    "y": 0.2837,\n    "z": 0.4575\n  },\n  "duration_ms": 4414.41,\n[0m
+[32m16:09:54.645[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification required after tool execution[0m
+[32m16:09:54.645[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:09:54.645[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:09:54.900[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:09:54.900[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:09:54.900[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:09:54.900[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:09:54.901[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:54.915[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:09:54.916[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:09:54.916[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:54.925[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:54.926[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:09:54.926[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:09:54.926[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:09:54.926[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:09:54.926[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:09:54.926[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:10:03.340[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:10:03.432[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:10:03.432[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:10:03.433[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: okay, move to...[0m
+[32m16:10:03.433[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:03.433[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:10:03.433[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification pending - passing to planner for LLM classification[0m
+[32m16:10:04.284[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mPhase 11: Processing verification response via LLM[0m
+[32m16:10:04.284[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mUnknown/other instruction type, clearing verification[0m
+[32m16:10:04.284[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:04.284[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:04.655[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: health_check[0m
+[32m16:10:04.676[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:04.676[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:04.676[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:04.676[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:10:04.677[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:04.688[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:10:04.688[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:10:04.688[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:04.701[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:04.701[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:04.702[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:10:04.702[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:04.702[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:10:04.702[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:10:04.702[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:10:09.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🎯 Processing WebSocket message[0m
+[32m16:10:09.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🏓 Handling ping for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:09.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m✅ ping handled successfully for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:12.436[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:10:12.444[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:10:12.445[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:10:12.445[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Another 20 cm....[0m
+[32m16:10:12.445[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:12.445[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:10:13.691[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move, tool_args={'direction': 'right', 'distance': 0.2}[0m
+[32m16:10:13.691[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:13.691[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:13.889[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:13.890[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:13.890[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:13.896[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving right.[0m
+[32m16:10:13.896[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:10:13.896[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:10:13.896[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move, args={'direction': 'right', 'distance': 0.2, 'angle': 15.0}[0m
+[32m16:10:13.903[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move, args={'direction': 'right', 'distance': 0.2, 'angle': 15.0}[0m
+[move_group-9] [INFO] [1765401013.910312350] [moveit_move_group_default_capabilities.plan_service_capability]: Received new planning service request...
+[move_group-9] [INFO] [1765401013.911212019] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-9] [ERROR] [1765401014.414647791] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree
+[move_group-9] [ERROR] [1765401014.414771703] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree
+[move_group-9] [ERROR] [1765401014.414924045] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree
+[move_group-9] [ERROR] [1765401014.414985746] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree
+[move_group-9] [WARN] [1765401014.415039503] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.503572 seconds
+[move_group-9] [INFO] [1765401014.418015854] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem
+[32m16:10:14.420[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:10:14.420[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move, result={'content': [{'type': 'text', 'text': '{\n  "success": false,\n  "message": "Motion planning/execution failed (error_code: moveit_msgs.msg.MoveItErrorCodes(val=1))",\n  "start_pose": {\n    "x": -0.3635,\n    "y": 0.2837,\n    "z": 0.4575\n  },\n  "end_pose": {\n    "x": -0.3635,\n    "y": 0.2837,\n[0m
+[32m16:10:14.420[0m | [33m[1mWARNING [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [33m[1mTool reported error payload[0m
+[32m16:10:14.420[0m | [33m[1mWARNING [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [33m[1mTool execution failed - stopping turn[0m
+[32m16:10:14.420[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:14.420[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:14.834[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:14.834[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:14.835[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:14.835[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:10:14.835[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:14.850[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:10:14.850[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:10:14.850[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:14.865[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:14.866[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:14.866[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:10:14.866[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:14.867[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:10:14.867[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:10:14.867[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:10:25.165[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:10:25.211[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:10:25.211[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:10:25.211[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Move to. Where is the back for 40 cm?...[0m
+[32m16:10:25.211[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:25.211[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:10:26.403[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move, tool_args={'direction': 'backward', 'distance': 0.4}[0m
+[32m16:10:26.403[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:26.403[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:26.710[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:26.711[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:26.711[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:26.717[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving backward.[0m
+[32m16:10:26.717[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:10:26.717[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:10:26.717[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move, args={'direction': 'backward', 'distance': 0.4, 'angle': 15.0}[0m
+[32m16:10:26.722[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move, args={'direction': 'backward', 'distance': 0.4, 'angle': 15.0}[0m
+[move_group-9] [INFO] [1765401026.730267481] [moveit_move_group_default_capabilities.plan_service_capability]: Received new planning service request...
+[move_group-9] [INFO] [1765401026.731033210] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-9] [ERROR] [1765401027.234616770] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree
+[move_group-9] [ERROR] [1765401027.234652223] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree
+[move_group-9] [ERROR] [1765401027.234687329] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree
+[move_group-9] [ERROR] [1765401027.234723042] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:265 - arm/arm: Unable to sample any valid states for goal tree
+[move_group-9] [WARN] [1765401027.234762171] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.503485 seconds
+[move_group-9] [INFO] [1765401027.239780136] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem
+[32m16:10:27.242[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:10:27.242[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move, result={'content': [{'type': 'text', 'text': '{\n  "success": false,\n  "message": "Motion planning/execution failed (error_code: moveit_msgs.msg.MoveItErrorCodes(val=1))",\n  "start_pose": {\n    "x": -0.3626,\n    "y": 0.2847,\n    "z": 0.4579\n  },\n  "end_pose": {\n    "x": -0.3626,\n    "y": 0.2847,\n[0m
+[32m16:10:27.242[0m | [33m[1mWARNING [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [33m[1mTool reported error payload[0m
+[32m16:10:27.242[0m | [33m[1mWARNING [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [33m[1mTool execution failed - stopping turn[0m
+[32m16:10:27.242[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:27.242[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:27.633[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:27.633[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:27.633[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:27.633[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:10:27.634[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:27.647[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:10:27.647[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:10:27.648[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:27.663[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:27.664[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:27.664[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:10:27.664[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:27.665[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:10:27.665[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:10:27.665[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:10:36.670[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:10:36.729[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:10:36.729[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:10:36.729[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Moving forward to the Waterboro for 40 cm....[0m
+[32m16:10:36.729[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:36.729[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:10:37.738[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move, tool_args={'direction': 'forward', 'distance': 0.4}[0m
+[32m16:10:37.738[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:37.738[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:37.875[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:37.875[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:37.875[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:37.880[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving forward.[0m
+[32m16:10:37.880[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:10:37.880[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:10:37.880[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move, args={'direction': 'forward', 'distance': 0.4, 'angle': 15.0}[0m
+[32m16:10:37.884[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move, args={'direction': 'forward', 'distance': 0.4, 'angle': 15.0}[0m
+[move_group-9] [INFO] [1765401037.890257620] [moveit_move_group_default_capabilities.plan_service_capability]: Received new planning service request...
+[move_group-9] [INFO] [1765401037.890811902] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-9] [INFO] [1765401037.937468483] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request
+[move_group-9] [INFO] [1765401037.937553461] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received
+[move_group-9] [INFO] [1765401037.937576910] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401037.937592726] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401037.937656681] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[move_group-9] [INFO] [1765401037.938393571] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...
+[move_group-9] [INFO] [1765401037.938417923] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401037.938427971] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401037.938494519] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to joint_trajectory_controller
+[ros2_control_node-1] [INFO] [1765401037.938637838] [joint_trajectory_controller]: Received new action goal
+[ros2_control_node-1] [INFO] [1765401037.938667343] [joint_trajectory_controller]: Accepted new action goal
+[move_group-9] [INFO] [1765401037.938812338] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: joint_trajectory_controller started execution
+[move_group-9] [INFO] [1765401037.938822321] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[32m16:10:39.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🎯 Processing WebSocket message[0m
+[32m16:10:39.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🏓 Handling ping for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:39.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m✅ ping handled successfully for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[ros2_control_node-1] [INFO] [1765401044.568136457] [joint_trajectory_controller]: Goal reached, success!
+[move_group-9] [INFO] [1765401044.589422700] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'joint_trajectory_controller' successfully finished
+[move_group-9] [INFO] [1765401044.592280883] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...
+[move_group-9] [INFO] [1765401044.592360588] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: SUCCEEDED
+[32m16:10:44.597[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:10:44.598[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move, result={'content': [{'type': 'text', 'text': '{\n  "success": true,\n  "message": "Moved to pose (0.037, 0.285, 0.458)",\n  "start_pose": {\n    "x": -0.3625,\n    "y": 0.2847,\n    "z": 0.458\n  },\n  "end_pose": {\n    "x": 0.0385,\n    "y": 0.2847,\n    "z": 0.4569\n  },\n  "duration_ms": 6708.66,\n  "d[0m
+[32m16:10:44.598[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification required after tool execution[0m
+[32m16:10:44.598[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:44.598[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:45.217[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:45.217[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:45.217[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:45.217[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:10:45.218[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:45.234[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:10:45.234[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:10:45.234[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:45.242[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:45.243[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:45.243[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:10:45.243[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:45.243[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:10:45.243[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:10:45.243[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:10:52.851[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:10:52.899[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:10:52.899[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:10:52.899[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Go down a little bit about 10 cm....[0m
+[32m16:10:52.899[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:52.899[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:10:52.900[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification pending - passing to planner for LLM classification[0m
+[32m16:10:54.217[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mPhase 11: Processing verification response via LLM[0m
+[32m16:10:54.217[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mNew instruction during verification, proceeding with tool[0m
+[32m16:10:54.218[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move, tool_args={'direction': 'down', 'distance': 0.1}[0m
+[32m16:10:54.218[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:54.218[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:54.422[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:54.422[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:54.423[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:54.429[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving down.[0m
+[32m16:10:54.430[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:10:54.430[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:10:54.430[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move, args={'direction': 'down', 'distance': 0.1, 'angle': 15.0}[0m
+[32m16:10:54.435[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move, args={'direction': 'down', 'distance': 0.1, 'angle': 15.0}[0m
+[move_group-9] [INFO] [1765401054.443253463] [moveit_move_group_default_capabilities.plan_service_capability]: Received new planning service request...
+[move_group-9] [INFO] [1765401054.444054959] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-9] [INFO] [1765401054.471464966] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request
+[move_group-9] [INFO] [1765401054.471548428] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received
+[move_group-9] [INFO] [1765401054.471569968] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401054.471584595] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401054.471626067] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[move_group-9] [INFO] [1765401054.472666875] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...
+[move_group-9] [INFO] [1765401054.472709175] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401054.472727131] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401054.472819287] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to joint_trajectory_controller
+[ros2_control_node-1] [INFO] [1765401054.473015559] [joint_trajectory_controller]: Received new action goal
+[ros2_control_node-1] [INFO] [1765401054.473054636] [joint_trajectory_controller]: Accepted new action goal
+[move_group-9] [INFO] [1765401054.473202854] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: joint_trajectory_controller started execution
+[move_group-9] [INFO] [1765401054.473219541] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[ros2_control_node-1] [INFO] [1765401055.712131574] [joint_trajectory_controller]: Goal reached, success!
+[move_group-9] [INFO] [1765401055.723468697] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'joint_trajectory_controller' successfully finished
+[move_group-9] [INFO] [1765401055.726296040] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...
+[move_group-9] [INFO] [1765401055.726371458] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: SUCCEEDED
+[32m16:10:55.731[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:10:55.731[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move, result={'content': [{'type': 'text', 'text': '{\n  "success": true,\n  "message": "Moved to pose (0.039, 0.285, 0.357)",\n  "start_pose": {\n    "x": 0.0385,\n    "y": 0.2847,\n    "z": 0.4569\n  },\n  "end_pose": {\n    "x": 0.0385,\n    "y": 0.2847,\n    "z": 0.3557\n  },\n  "duration_ms": 1292.19,\n  "d[0m
+[32m16:10:55.732[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification required after tool execution[0m
+[32m16:10:55.732[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:10:55.732[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:10:55.875[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:10:55.875[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:10:55.875[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:10:55.875[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:10:55.876[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:55.889[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:10:55.890[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:10:55.890[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:55.896[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:55.896[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:10:55.897[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:10:55.897[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:10:55.897[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:10:55.897[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:10:55.897[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:11:02.210[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:11:02.241[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:11:02.241[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:11:02.241[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Go to arrival. Another 10 cm....[0m
+[32m16:11:02.241[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:02.241[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:11:02.242[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification pending - passing to planner for LLM classification[0m
+[32m16:11:03.373[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mPhase 11: Processing verification response via LLM[0m
+[32m16:11:03.373[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mNew instruction during verification, proceeding with tool[0m
+[32m16:11:03.373[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move, tool_args={'direction': 'forward', 'distance': 0.1}[0m
+[32m16:11:03.373[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:11:03.373[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:11:03.676[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:11:03.676[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:11:03.676[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:11:03.682[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving forward.[0m
+[32m16:11:03.682[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:11:03.682[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:11:03.683[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move, args={'direction': 'forward', 'distance': 0.1, 'angle': 15.0}[0m
+[32m16:11:03.689[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move, args={'direction': 'forward', 'distance': 0.1, 'angle': 15.0}[0m
+[move_group-9] [INFO] [1765401063.696676200] [moveit_move_group_default_capabilities.plan_service_capability]: Received new planning service request...
+[move_group-9] [INFO] [1765401063.697482772] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-9] [INFO] [1765401063.761905183] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request
+[move_group-9] [INFO] [1765401063.761957830] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received
+[move_group-9] [INFO] [1765401063.761968661] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401063.761977157] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401063.762001655] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[move_group-9] [INFO] [1765401063.762255475] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...
+[move_group-9] [INFO] [1765401063.762289998] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401063.762303021] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401063.762372145] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to joint_trajectory_controller
+[ros2_control_node-1] [INFO] [1765401063.762539176] [joint_trajectory_controller]: Received new action goal
+[ros2_control_node-1] [INFO] [1765401063.762579932] [joint_trajectory_controller]: Accepted new action goal
+[move_group-9] [INFO] [1765401063.762682679] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: joint_trajectory_controller started execution
+[move_group-9] [INFO] [1765401063.762697207] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[ros2_control_node-1] [INFO] [1765401068.781144843] [joint_trajectory_controller]: Goal reached, success!
+[move_group-9] [INFO] [1765401068.812945026] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'joint_trajectory_controller' successfully finished
+[move_group-9] [INFO] [1765401068.815207265] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...
+[move_group-9] [INFO] [1765401068.815273928] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: SUCCEEDED
+[32m16:11:08.819[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:11:08.819[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move, result={'content': [{'type': 'text', 'text': '{\n  "success": true,\n  "message": "Moved to pose (0.138, 0.285, 0.356)",\n  "start_pose": {\n    "x": 0.0385,\n    "y": 0.2847,\n    "z": 0.3557\n  },\n  "end_pose": {\n    "x": 0.1369,\n    "y": 0.2843,\n    "z": 0.3548\n  },\n  "duration_ms": 5127.22,\n  "d[0m
+[32m16:11:08.819[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification required after tool execution[0m
+[32m16:11:08.819[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:11:08.819[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:11:08.820[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: health_check[0m
+[32m16:11:09.104[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:11:09.104[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:11:09.104[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:11:09.104[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:11:09.104[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:09.116[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:11:09.116[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:11:09.116[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:09.122[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:09.122[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:09.123[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:11:09.123[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:09.123[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:11:09.123[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:11:09.123[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:11:09.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🎯 Processing WebSocket message[0m
+[32m16:11:09.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🏓 Handling ping for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:09.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m✅ ping handled successfully for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:17.830[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:11:17.910[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:11:17.910[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:11:17.911[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: No, go to the water bottle of another 10, cm....[0m
+[32m16:11:17.911[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:17.911[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:11:17.911[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification pending - passing to planner for LLM classification[0m
+[32m16:11:19.034[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mPhase 11: Processing verification response via LLM[0m
+[32m16:11:19.034[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mNew instruction during verification, proceeding with tool[0m
+[32m16:11:19.034[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move, tool_args={'direction': 'forward', 'distance': 0.1}[0m
+[32m16:11:19.034[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:11:19.034[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:11:19.344[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:11:19.344[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:11:19.344[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:11:19.351[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving forward.[0m
+[32m16:11:19.351[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:11:19.351[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:11:19.351[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move, args={'direction': 'forward', 'distance': 0.1, 'angle': 15.0}[0m
+[32m16:11:19.355[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move, args={'direction': 'forward', 'distance': 0.1, 'angle': 15.0}[0m
+[move_group-9] [INFO] [1765401079.362175636] [moveit_move_group_default_capabilities.plan_service_capability]: Received new planning service request...
+[move_group-9] [INFO] [1765401079.363025986] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-9] [INFO] [1765401079.426401525] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request
+[move_group-9] [INFO] [1765401079.426449909] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received
+[move_group-9] [INFO] [1765401079.426460784] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401079.426469095] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401079.426491180] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[move_group-9] [INFO] [1765401079.427250494] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...
+[move_group-9] [INFO] [1765401079.427289665] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401079.427311754] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401079.427408159] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to joint_trajectory_controller
+[move_group-9] [INFO] [1765401079.427646800] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: joint_trajectory_controller started execution
+[move_group-9] [INFO] [1765401079.427655951] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[ros2_control_node-1] [INFO] [1765401079.427539706] [joint_trajectory_controller]: Received new action goal
+[ros2_control_node-1] [INFO] [1765401079.427567262] [joint_trajectory_controller]: Accepted new action goal
+[ros2_control_node-1] [INFO] [1765401080.592141629] [joint_trajectory_controller]: Goal reached, success!
+[move_group-9] [INFO] [1765401080.628131148] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'joint_trajectory_controller' successfully finished
+[move_group-9] [INFO] [1765401080.631345564] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...
+[move_group-9] [INFO] [1765401080.631464725] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: SUCCEEDED
+[32m16:11:20.637[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:11:20.637[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move, result={'content': [{'type': 'text', 'text': '{\n  "success": true,\n  "message": "Moved to pose (0.237, 0.284, 0.355)",\n  "start_pose": {\n    "x": 0.1369,\n    "y": 0.2843,\n    "z": 0.3548\n  },\n  "end_pose": {\n    "x": 0.2374,\n    "y": 0.284,\n    "z": 0.3548\n  },\n  "duration_ms": 1277.72,\n  "di[0m
+[32m16:11:20.637[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification required after tool execution[0m
+[32m16:11:20.637[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:11:20.637[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:11:20.982[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:11:20.983[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:11:20.983[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:11:20.983[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:11:20.983[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:20.996[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:11:20.996[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:11:20.996[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:21.002[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:21.002[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:21.002[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:11:21.003[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:21.003[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:11:21.003[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:11:21.003[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:11:30.914[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:11:30.971[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:11:30.971[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:11:30.972[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: Go back a word for 15 Seymour....[0m
+[32m16:11:30.972[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:30.972[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:11:30.972[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification pending - passing to planner for LLM classification[0m
+[32m16:11:31.837[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mPhase 11: Processing verification response via LLM[0m
+[32m16:11:31.837[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mNew instruction during verification, proceeding with tool[0m
+[32m16:11:31.837[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1m[DIAG] Planner tool decision: tool_name=move, tool_args={'direction': 'backward', 'distance': 0.15}[0m
+[32m16:11:31.837[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:11:31.837[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:11:32.055[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:11:32.055[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:11:32.055[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:11:32.062[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_acknowledgment[0m | [1mSent acknowledgment for session 28c33155-64d0-445e-b0b7-870b5e06c5f6: Ok, moving backward.[0m
+[32m16:11:32.062[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mAcknowledgment sent before tool execution[0m
+[32m16:11:32.063[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1mInvoking MCP tool[0m
+[32m16:11:32.063[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] Calling MCP tool: tool=move, args={'direction': 'backward', 'distance': 0.15, 'angle': 15.0}[0m
+[32m16:11:32.067[0m | [1mINFO    [0m | [36msrc.mcp.stdio_client[0m:[36m_stderr_loop[0m | [1m[moveit stderr] [DIAG] MCP call_tool: name=move, args={'direction': 'backward', 'distance': 0.15, 'angle': 15.0}[0m
+[move_group-9] [INFO] [1765401092.072721623] [moveit_move_group_default_capabilities.plan_service_capability]: Received new planning service request...
+[move_group-9] [INFO] [1765401092.073119980] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-9] [INFO] [1765401092.110433336] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Received goal request
+[move_group-9] [INFO] [1765401092.110511283] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution request received
+[move_group-9] [INFO] [1765401092.110534190] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401092.110549668] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401092.110596534] [moveit_ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[move_group-9] [INFO] [1765401092.111258813] [moveit_ros.trajectory_execution_manager]: Starting trajectory execution ...
+[move_group-9] [INFO] [1765401092.111293058] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401092.111332898] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-9] [INFO] [1765401092.111426006] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to joint_trajectory_controller
+[ros2_control_node-1] [INFO] [1765401092.111605488] [joint_trajectory_controller]: Received new action goal
+[ros2_control_node-1] [INFO] [1765401092.111645585] [joint_trajectory_controller]: Accepted new action goal
+[move_group-9] [INFO] [1765401092.111751585] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: joint_trajectory_controller started execution
+[move_group-9] [INFO] [1765401092.111766739] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[ros2_control_node-1] [INFO] [1765401096.627141250] [joint_trajectory_controller]: Goal reached, success!
+[move_group-9] [INFO] [1765401096.662130791] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'joint_trajectory_controller' successfully finished
+[move_group-9] [INFO] [1765401096.665256503] [moveit_ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...
+[move_group-9] [INFO] [1765401096.665358119] [moveit_move_group_default_capabilities.execute_trajectory_action_capability]: Execution completed: SUCCEEDED
+[32m16:11:36.672[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_mcp_event[0m | [1mMCP event: tool_invoked[0m
+[32m16:11:36.673[0m | [1mINFO    [0m | [36msrc.conversation.graph.executor[0m:[36mexecute[0m | [1m[DIAG] MCP response: tool=move, result={'content': [{'type': 'text', 'text': '{\n  "success": true,\n  "message": "Moved to pose (0.087, 0.284, 0.355)",\n  "start_pose": {\n    "x": 0.2374,\n    "y": 0.284,\n    "z": 0.3548\n  },\n  "end_pose": {\n    "x": 0.0883,\n    "y": 0.2829,\n    "z": 0.354\n  },\n  "duration_ms": 4600.44,\n  "dir[0m
+[32m16:11:36.673[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification required after tool execution[0m
+[32m16:11:36.673[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:11:36.673[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:11:36.891[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:11:36.891[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:11:36.891[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:11:36.891[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:11:36.891[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:36.901[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:11:36.901[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:11:36.901[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:36.907[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:36.907[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:36.908[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:11:36.908[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:36.908[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:11:36.908[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:11:36.908[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:11:39.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🎯 Processing WebSocket message[0m
+[32m16:11:39.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m🏓 Handling ping for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:39.554[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_handle_message[0m | [1m✅ ping handled successfully for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:40.482[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:11:40.517[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:11:40.517[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mTurn ended without transcript (cancelled or no speech)[0m
+[32m16:11:40.518[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:40.518[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:40.518[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:40.519[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:11:40.519[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:40.519[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:11:40.519[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:11:40.519[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
+[32m16:11:50.876[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_event[0m
+[32m16:11:50.919[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mFinal transcript received from stream[0m
+[32m16:11:50.919[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_success[0m
+[32m16:11:50.919[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mon_transcript[0m | [1mSent early transcript: So what time is it?...[0m
+[32m16:11:50.920[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:50.920[0m | [1mINFO    [0m | [36msrc.conversation.single_utterance_engine[0m:[36mprocess_conversation_turn[0m | [1mSpeech transcribed via stream[0m
+[32m16:11:50.920[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mVerification pending - passing to planner for LLM classification[0m
+[32m16:11:51.819[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mPhase 11: Processing verification response via LLM[0m
+[32m16:11:51.820[0m | [1mINFO    [0m | [36msrc.conversation.graph.runner[0m:[36mrun_turn[0m | [1mUnknown/other instruction type, clearing verification[0m
+[32m16:11:51.820[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSynthesizing single utterance response[0m
+[32m16:11:51.820[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_request[0m
+[32m16:11:52.214[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: tts_success[0m
+[32m16:11:52.214[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: single_utterance_synthesis[0m
+[32m16:11:52.215[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36msynthesize[0m | [1mSingle utterance synthesis completed[0m
+[32m16:11:52.215[0m | [1mINFO    [0m | [36msrc.conversation.graph.responder[0m:[36mrespond[0m | [1mResponder prepared final output[0m
+[32m16:11:52.215[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:52.228[0m | [1mINFO    [0m | [36msrc.conversation.models[0m:[36mlog_snapshot[0m | [1mTurn metrics updated[0m
+[32m16:11:52.229[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_complete[0m
+[32m16:11:52.229[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:52.239[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_send_conversation_result[0m | [1mConversation turn completed for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:52.240[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36m_process_streaming_turn[0m | [1mStarting streaming turn for session 28c33155-64d0-445e-b0b7-870b5e06c5f6[0m
+[32m16:11:52.240[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_conversation_event[0m | [1mConversation event: turn_start[0m
+[32m16:11:52.240[0m | [1mINFO    [0m | [36msrc.conversation.state_machine[0m:[36mtransition_to[0m | [1mState transition completed[0m
+[32m16:11:52.240[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: streaming_transcription_start[0m
+[32m16:11:52.240[0m | [1mINFO    [0m | [36msrc.audio.single_utterance_processor[0m:[36mtranscribe_stream[0m | [1mStarting real-time stream transcription with V2 Recognizer...[0m
+[32m16:11:52.240[0m | [1mINFO    [0m | [36msrc.config.logging[0m:[36mlog_audio_event[0m | [1mAudio event: stt_streaming_start[0m
